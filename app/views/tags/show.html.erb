@@ -1,6 +1,0 @@
-<h1> LISTING PICTURES</h1>
-<% @post_attachments.each do |t| %>
-
-  <%= image_tag t.avatar_url(:thumb) %><br>
-  <%end%>
-<%= link_to 'back to album',tags_path%>

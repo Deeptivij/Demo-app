@@ -1,2 +1,0 @@
-# Demo-app
-first repository
