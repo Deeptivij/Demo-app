@@ -1,0 +1,40 @@
+/home/deepti/.rvm/rubies/ruby-2.0.0-p645/bin/ruby -r ./siteconf20150928-12608-pkl0mx.rb extconf.rb
+checking for main() in -lpthread... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling v8.cc
+compiling backref.cc
+compiling constraints.cc
+compiling accessor.cc
+compiling date.cc
+compiling stack.cc
+compiling value.cc
+compiling object.cc
+compiling script.cc
+compiling external.cc
+compiling exception.cc
+compiling primitive.cc
+compiling init.cc
+compiling constants.cc
+compiling trycatch.cc
+compiling signature.cc
+compiling gc.cc
+compiling invocation.cc
+compiling handles.cc
+compiling heap.cc
+compiling string.cc
+compiling context.cc
+compiling template.cc
+compiling locker.cc
+compiling rr.cc
+compiling array.cc
+compiling message.cc
+compiling function.cc
+linking shared-object v8/init.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 init.so ./.gem.20150928-12608-1lm8u2u/v8
+installing default init libraries

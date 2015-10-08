@@ -1,0 +1,68 @@
+<head>
+<script type="text/javascript" src="//www.gstatic.com/authtoolkit/js/gitkit.js"></script>
+<link type=text/css rel=stylesheet href="//www.gstatic.com/authtoolkit/css/gitkit.css" />
+<script type=text/javascript>
+var config ={"widgetUrl": "http://localhost:3000/auth/google_oauth2/callback",
+  "signInSuccessUrl": "http://localhost:3000/home",
+  "signOutUrl": "http://localhost:3000",
+  "oobActionUrl": "http://localhost:3000",
+  "apiKey": "AIzaSyDL5jtrjdTL3-BfZsfDfY9I3P4W4njZg2Y",
+  "siteName": "this site",
+  "signInOptions": ["password","google"]}
+ 
+    // Copy and paste Client configuration here
+  ;
+  // The HTTP POST body should be escaped by the server to prevent XSS
+  window.google.identitytoolkit.start(
+      '#gitkitWidgetDiv', // accepts any CSS selector
+      config);
+
+</script>
+
+
+</head>
+<body>
+	
+ <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+<p class="shipp">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <%= link_to 'Twitter', user_omniauth_authorize_path(:twitter) %>
+  <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
+ 
+
+<% end %>
+
+<%= yield %>
+<div id="left"></div>
+<div id="right"></div>
+<div id="top"></div>
+<div id="bottom"></div>
+<style>
+#top, #bottom, #left, #right {
+	background: #F08080;
+	position: fixed;
+	}
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 8px;
+		}
+		#left { left: 0; }
+		#right { right: 0; }
+		
+	#top, #bottom {
+		left: 0; right: 0;
+		height: 8px;
+		}
+		#top { top: 0; }
+		#bottom { bottom: 0; }
+</style>
+</body>

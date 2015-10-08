@@ -1,0 +1,22 @@
+<body>
+<h1> LISTING PICTURES</h1>
+<div >
+	<p class="fishh"> MY PICTURES </p>
+	</div>
+<% @post_attachments.each do |t| %>
+
+  <%= image_tag t.avatar_url(:thumb) %><br>
+  <%end%>
+<%= link_to 'back to album',tags_path%>
+</body>
+<style>
+div{float:right;}
+body{
+    background-image: url("/assets/images80.jpeg");
+   background-size: 1200px 700px;
+  } .fishh {
+  font: 400 100px/1.5 'Pacifico', Helvetica, sans-serif;
+  color: 'purple';
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+</style>

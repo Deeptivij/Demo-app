@@ -1,0 +1,12 @@
+vwindow.google.identitytoolkit.signInButton(
+'#gitkitWidgetDiv', // accepts any CSS selector
+{
+"widgetUrl": "http://localhost:3000",
+  "signInSuccessUrl": "http://localhost:3000/home",
+  "signOutUrl": "http://localhost:3000",
+  "oobActionUrl": "http://localhost:3000",
+  "apiKey": "AIzaSyDL5jtrjdTL3-BfZsfDfY9I3P4W4njZg2Y",
+  "siteName": "this site",
+  "signInOptions": ["password","google"]
+}
+);
